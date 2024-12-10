@@ -11,6 +11,7 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'JSEsdevenimentsDavidGelma';
   caractersAcumulats: string = '';
+  comptador = 0;
 
   constructor() {}
 
@@ -21,5 +22,12 @@ export class AppComponent implements OnInit {
   }
   acumular(event: KeyboardEvent) {
     this.caractersAcumulats += event.key.toUpperCase();
+  }
+  incrementaComptador() {
+    this.comptador++;
+  }
+
+  reiniciarComptador() {
+    this.comptador = 0;
   }
 }

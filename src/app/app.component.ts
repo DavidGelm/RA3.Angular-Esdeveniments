@@ -10,19 +10,16 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'JSEsdevenimentsDavidGelma';
-  teclaActual = '';
+  caractersAcumulats: string = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 
   canviaColor(nouColor: string) {
     document.body.style.backgroundColor = nouColor;
   }
-  mostraTecla(event: KeyboardEvent) {
-    this.teclaActual = event.key.toUpperCase();
-  }
-  amagaTecla() {
-    this.teclaActual = '';
+  acumular(event: KeyboardEvent) {
+    this.caractersAcumulats += event.key.toUpperCase();
   }
 }

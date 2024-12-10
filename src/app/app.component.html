@@ -230,9 +230,9 @@
       <button (mousedown)="canviaColor('blue')"
               (mouseup)="canviaColor('orange')"
       >Canviar color</button>
-      <button (keydown)="mostraTecla($event)"
-              (keyup)="amagaTecla()">Prem una tecla</button>
-      <h1>{{teclaActual}}</h1>
+      <button (keydown)="acumular($event)">Prem una tecla</button>
+      <h1>{{caractersAcumulats}}</h1>
+
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>

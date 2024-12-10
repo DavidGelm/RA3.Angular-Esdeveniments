@@ -238,6 +238,13 @@
       <button (click)="reiniciarComptador()">Reiniciar comptador</button>
       <p>Introdueix la combinacio de tecles QWERTY per mostrar el video</p>
       <iframe *ngIf="videoVisible" src="https://www.youtube.com/embed/RCA3EfKUJMw?si=rEiIEUqyzZWhESjn"></iframe>
+      <form>
+        <label>Nom:</label>
+        <input type="text" name="nom" [(ngModel)]="nom" required>
+        <label>Cognom:</label>
+        <input type="text" name="cognom" [(ngModel)]="cognom" required>
+        <button type="submit" (click)="enviar()">Enviar</button>
+      </form>
 
 
 

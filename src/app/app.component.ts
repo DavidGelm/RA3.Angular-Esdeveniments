@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {TimelineModule} from 'primeng/timeline';
+import {ChipModule} from 'primeng/chip';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgIf, FormsModule],
+  imports: [RouterOutlet, NgIf, FormsModule, TimelineModule, ChipModule],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrls: ['./app.component.css']
@@ -24,8 +27,15 @@ export class AppComponent implements OnInit {
   num2 = 0;
 
   constructor() {}
-
-  ngOnInit() {}
+  events: any[] = [];
+  ngOnInit() {
+    this.events = [
+      { status: 'Comanda realitzada', date: '2024-05-01'},
+      { status: 'Enviat', date: '2024-05-05'},
+      { status: 'En trànsit', date: '2024-05-07'},
+      { status: 'Lliurat', date: '2024-05-10'}
+    ];
+  }
 
   canviaColor(nouColor: string) {
     document.body.style.backgroundColor = nouColor;
@@ -72,4 +82,14 @@ export class AppComponent implements OnInit {
   mostrarOperacio(operacio: string){
       this.operacio = operacio;
     }
+  onDragEvent($event: DragEvent) {
+      console.log('Estas arrossegant el chip', event);
+    }
+  onFocusEvent(event: any) {
+    console.log('Element que te focus:', event.status);
+  }
+
+  onBlurEvent(event: any) {
+    console.log('Element que ja no te focus:', event.status);
+  }
 }

@@ -264,10 +264,16 @@
             ="multiplicacio()">Multiplicacio</button>
           <button (mouseover)="mostrarOperacio('Divisio')" (click)="divisio()">Divisio</button>
         </div>
+        <p-timeline [value]="events">
+          <ng-template pTemplate="content" let-event>
+            <div tabindex="0" (focus)="onFocusEvent(event)" (blur)="onBlurEvent(event)"
+                 class="timeline-item">
+              {{ event.status }} - {{ event.date }}
+            </div>
+          </ng-template>
+        </p-timeline>
+        <p-chip label="Action" [draggable]="true" (drag)="onDragEvent($event)"></p-chip>
       </div>
-
-
-
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>

@@ -246,6 +246,26 @@
         <button type="submit" (click)="enviar()">Enviar</button>
       </form>
 
+      <div>
+        <h1>Calculadora</h1>
+        <div>
+          <input type="number" [(ngModel)]="num1">
+          <input type="number" [(ngModel)]="num2">
+        </div>
+
+        <div>
+          <p>Resultat: {{resultat}}</p>
+          <p *ngIf="operacio">Operacio: {{operacio}}</p>
+        </div>
+        <div>
+          <button (mouseover)="mostrarOperacio('Suma')" (click)="suma()">Suma</button>
+          <button (mouseover)="mostrarOperacio('Resta')" (click)="resta()">Resta</button>
+          <button (mouseover)="mostrarOperacio('Multiplicacio')" (click)
+            ="multiplicacio()">Multiplicacio</button>
+          <button (mouseover)="mostrarOperacio('Divisio')" (click)="divisio()">Divisio</button>
+        </div>
+      </div>
+
 
 
 

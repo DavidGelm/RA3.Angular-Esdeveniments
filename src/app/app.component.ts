@@ -18,6 +18,11 @@ export class AppComponent implements OnInit {
   nom= '';
   cognom= '';
 
+  resultat = 0;
+  operacio= '';
+  num1 = 0;
+  num2 = 0;
+
   constructor() {}
 
   ngOnInit() {}
@@ -41,5 +46,30 @@ export class AppComponent implements OnInit {
   enviar() {
     console.log(this.nom + ' ' + this.cognom)
   }
+  suma() {
+    this.resultat = this.num1 + this.num2;
+    this.operacio = 'Suma';
+  }
 
+  resta() {
+    this.resultat = this.num1 - this.num2;
+    this.operacio = 'Resta';
+  }
+
+  multiplicacio() {
+    this.resultat = this.num1 * this.num2;
+    this.operacio = 'Multiplicacio';
+  }
+
+  divisio() {
+    if (this.num2 !== 0) {
+      this.resultat = this.num1 / this.num2;
+      this.operacio = 'Divisio';
+    } else {
+      this.resultat = 0;
+    }
+  }
+  mostrarOperacio(operacio: string){
+      this.operacio = operacio;
+    }
 }
